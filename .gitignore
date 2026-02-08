@@ -1,0 +1,13 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+.vscode
+.idea
+__pycache__
+*.pyc
+diagnostic_model.pth
+data
+archive (1).zip
+.env
