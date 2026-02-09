@@ -118,10 +118,10 @@ const App = () => {
           newIntensity = avg + (Math.random() * 8); // Noise/Fluid
         }
 
-        // Apply MRI palette (slightly bluish/greenish tint for clinical look)
-        data[i] = Math.min(255, newIntensity * 0.85);
-        data[i + 1] = Math.min(255, newIntensity * 1.05);
-        data[i + 2] = Math.min(255, newIntensity * 1.2);
+        // Apply Grayscale MRI palette (Pure white/gray/black)
+        data[i] = newIntensity;
+        data[i + 1] = newIntensity;
+        data[i + 2] = newIntensity;
       }
 
       ctx.putImageData(imageData, 0, 0);
@@ -139,7 +139,7 @@ const App = () => {
           style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1rem', marginBottom: '1rem' }}
         >
           <div className="glass" style={{ padding: '12px', borderRadius: '12px' }}>
-            <Activity size={32} color="var(--accent-primary)" className="pulse" />
+            <Activity size={32} color="var(--accent-primary)" />
           </div>
           <h1 className="gradient-text" style={{ fontSize: '2.5rem', fontWeight: '800' }}>NEUROSYNTH AI</h1>
         </motion.div>
@@ -245,7 +245,7 @@ const App = () => {
                   <div style={{ position: 'relative', overflow: 'hidden', borderRadius: '12px', background: '#000', aspectRatio: '1/1', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {processing ? (
                       <div style={{ textAlign: 'center' }}>
-                        <div className="pulse" style={{ fontSize: '3rem', color: 'var(--accent-primary)', fontWeight: '200' }}>{progress}%</div>
+                        <div style={{ fontSize: '3rem', color: 'var(--accent-primary)', fontWeight: '200' }}>{progress}%</div>
                         <div style={{ width: '120px', height: '2px', background: 'rgba(255,255,255,0.1)', margin: '1rem auto' }}>
                           <motion.div initial={{ width: 0 }} animate={{ width: `${progress}%` }} style={{ height: '100%', background: 'var(--accent-primary)' }} />
                         </div>
@@ -293,7 +293,7 @@ const App = () => {
                   )}
                   {resultImage && !processing && (
                     <>
-                      <div style={{ position: 'absolute', top: 0, left: `${sliderPos}%`, width: '2px', height: '100%', background: 'var(--accent-primary)', boxShadow: '0 0 10px var(--accent-primary)' }} />
+                      <div style={{ position: 'absolute', top: 0, left: `${sliderPos}%`, width: '2px', height: '100%', background: 'var(--accent-primary)' }} />
                       <input
                         type="range"
                         min="0"
@@ -308,7 +308,7 @@ const App = () => {
                     <motion.div
                       animate={{ top: ['0%', '100%', '0%'] }}
                       transition={{ duration: 2, repeat: Infinity }}
-                      style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'var(--accent-primary)', boxShadow: '0 0 15px var(--accent-primary)', zIndex: 10 }}
+                      style={{ position: 'absolute', left: 0, right: 0, height: '2px', background: 'var(--accent-primary)', zIndex: 10 }}
                     />
                   )}
                 </div>

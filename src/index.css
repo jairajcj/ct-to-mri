@@ -3,13 +3,13 @@
 :root {
   --bg-deep: #0a0c10;
   --bg-card: rgba(22, 27, 34, 0.7);
-  --accent-primary: #00f2fe;
-  --accent-secondary: #4facfe;
-  --accent-success: #00ff87;
+  --accent-primary: #ffffff;
+  --accent-secondary: #e0e0e0;
+  --accent-success: #ffffff;
   --text-primary: #f0f6fc;
   --text-secondary: #8b949e;
   --border-glass: rgba(255, 255, 255, 0.1);
-  --glow-primary: rgba(0, 242, 254, 0.2);
+  --glow-primary: transparent;
 }
 
 * {
@@ -79,7 +79,7 @@ h4 {
 /* Animations */
 @keyframes pulse {
   0% {
-    opacity: 0.6;
+    opacity: 1;
   }
 
   50% {
@@ -87,7 +87,7 @@ h4 {
   }
 
   100% {
-    opacity: 0.6;
+    opacity: 1;
   }
 }
 

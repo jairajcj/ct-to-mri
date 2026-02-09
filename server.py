@@ -54,11 +54,9 @@ def simulate_mri(image):
     mri_array = 255 - img_array # Invert for basic bone-dark effect
     mri_array = np.clip(mri_array * 1.2, 0, 255).astype(np.uint8)
     
-    # Add slight blue tint
+    # Remove blue tint - keep strictly grayscale/T2 style
     mri_img = Image.fromarray(mri_array).convert('RGB')
-    data = np.array(mri_img)
-    data[:,:,2] = np.clip(data[:,:,2] * 1.1, 0, 255) # Blue channel boost
-    return Image.fromarray(data)
+    return mri_img
 
 @app.route('/analyze', methods=['POST'])
 def analyze():
