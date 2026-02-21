@@ -1,3 +1,4 @@
+# NeuroSynth AI: CT to MRI Cross-Modality Reconstruction
 
 NeuroSynth AI is a high-performance medical imaging platform that leverages Deep Learning to reconstruct synthetic MRI scans from CT scans and provide real-time diagnostic classification for lung cancer detection.
 
